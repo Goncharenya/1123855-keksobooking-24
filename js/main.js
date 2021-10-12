@@ -1,53 +1,9 @@
-const getRandomFloat = function (from, to, numOfDecimalPlaces) {
-  if (from < 0 || to <= from) {
-    throw new Error('некорректный диапазон чисел');
-  }
-  const randomNum = from + Math.random() * (to - from);
-  return randomNum.toFixed(numOfDecimalPlaces);
-};
-
-const getRandomInt = function (from, to) {
-  return getRandomFloat(from, to, 0);
-};
-
-//getRandomInt(2, 90);
-
-getRandomFloat(1, 100, 2);
-
-const PHOTOS = [
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
-  'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
-];
-
-const FEATURES = [
-  'wifi',
-  'dishwasher',
-  'parking',
-  'washer',
-  'elevator',
-  'conditioner',
-];
-
-const HOURS = [
-  '12:00',
-  '13:00',
-  '14:00',
-];
-
-const TYPES = [
-  'palace',
-  'flat',
-  'house',
-  'bungalow',
-  'hotel',
-];
-
-const getAvatar = () => {
-  const randomNum = `0${getRandomInt(1, 10)}`.slice(-2);
-  return `img/avatars/user${randomNum}.png`;
-};
-
+import '/js/random-num.js';
+import '/js/names.js';
+import {getRandomFloat, getRandomInt} from '/js/random-num.js';
+import {TYPES, HOURS, FEATURES, PHOTOS} from '/js/names.js';
+import '/js/get-avatar.js';
+import {getAvatar} from '/js/get-avatar.js';
 
 const createObject = () => {
   const location = {
@@ -86,5 +42,6 @@ const createArray = () => {
   return array;
 };
 
+//console.log(createArray());
+
 createArray();
-// console.log(createArray());
