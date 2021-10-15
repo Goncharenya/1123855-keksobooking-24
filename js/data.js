@@ -32,3 +32,11 @@ export const createObject = () => {
     },
   };
 };
+
+export const createArray = () => {
+  const array = [];
+  for (let ind = 0; ind < 10; ind++) {
+    array.push(createObject());
+  }
+  return array;
+};
