@@ -10,7 +10,4 @@ const getRandomInt = function (from, to) {
   return getRandomFloat(from, to, 0);
 };
 
-getRandomInt();
-getRandomFloat();
-
 export {getRandomFloat, getRandomInt};

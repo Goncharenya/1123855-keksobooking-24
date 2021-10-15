@@ -1,5 +1,5 @@
-import {FEATURES, HOURS, PHOTOS, TYPES} from '/js/names.js';
-import {getRandomInt, getRandomFloat} from '/js/utils.js';
+import {FEATURES, HOURS, PHOTOS, TYPES} from './names.js';
+import {getRandomInt, getRandomFloat} from './utils.js';
 
 export const getAvatar = () => {
   const randomNum = `0${getRandomInt(1, 10)}`.slice(-2);
@@ -28,8 +28,8 @@ export const createObject = () => {
       feature: FEATURES.slice(0, getRandomInt(1, 5)),
       description: 'ВАУ! Это все',
       photos: PHOTOS.slice(0, getRandomInt(1, 2)),
-      location,
     },
+    location,
   };
 };
 
