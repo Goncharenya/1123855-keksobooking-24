@@ -26,5 +26,12 @@ const TYPES = [
   'bungalow',
   'hotel',
 ];
+const FORMATTED_TYPES = {
+  palace: 'дворец',
+  flat: 'квартира',
+  house: 'дом',
+  bungalow: 'бунгало',
+  hotel: 'отель',
+};
 
-export {PHOTOS, FEATURES, HOURS, TYPES};
+export {PHOTOS, FEATURES, HOURS, FORMATTED_TYPES, TYPES};
