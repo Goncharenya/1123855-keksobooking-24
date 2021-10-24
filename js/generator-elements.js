@@ -3,10 +3,10 @@ import {createArray} from './data.js';
 import {FORMATTED_TYPES} from './names.js';
 
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
-const mapCanvas = document.querySelector('.map__canvas');
+export const mapCanvas = document.querySelector('.map__canvas');
 const ads = createArray();
 
-const randomName = (elem, value) => {
+const renderContent = (elem, value) => {
   if (value){
     elem.textContent = value;
   } else {
@@ -16,14 +16,14 @@ const randomName = (elem, value) => {
 
 const generateCard = (i) => {
   const cardContent = cardTemplate.cloneNode(true);
-  randomName(cardContent.querySelector('.popup__title'), ads[i].offer.title);
-  randomName(cardContent.querySelector('.popup__text--address'), ads[i].offer.address);
-  randomName(cardContent.querySelector('.popup__text--price'), `${ads[i].offer.price} ₽/ночь`);
-  randomName(cardContent.querySelector('.popup__type'), FORMATTED_TYPES[ads[i].offer.type]);
-  randomName(cardContent.querySelector('.popup__text--capacity'), `${ads[i].offer.rooms} комнаты для ${ads[0].offer.guests} гостей`);
-  randomName(cardContent.querySelector('.popup__text--capacity'), `Заезд после ${ads[i].offer.checkin}, выезд до ${ads[0].offer.checkout}`);
+  renderContent(cardContent.querySelector('.popup__title'), ads[i].offer.title);
+  renderContent(cardContent.querySelector('.popup__text--address'), ads[i].offer.address);
+  renderContent(cardContent.querySelector('.popup__text--price'), `${ads[i].offer.price} ₽/ночь`);
+  renderContent(cardContent.querySelector('.popup__type'), FORMATTED_TYPES[ads[i].offer.type]);
+  renderContent(cardContent.querySelector('.popup__text--capacity'), `${ads[i].offer.rooms} комнаты для ${ads[0].offer.guests} гостей`);
+  renderContent(cardContent.querySelector('.popup__text--capacity'), `Заезд после ${ads[i].offer.checkin}, выезд до ${ads[0].offer.checkout}`);
   const featuresElements = cardContent.querySelectorAll('.popup__feature');
-  randomName(cardContent.querySelector('.popup__description'), ads[i].offer.description);
+  renderContent(cardContent.querySelector('.popup__description'), ads[i].offer.description);
   const avatarElem = cardContent.querySelector('.popup__avatar');
 
   if (ads[i].author.avatar){
