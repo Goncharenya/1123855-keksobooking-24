@@ -20,8 +20,15 @@ const formDisable = () => {
 formDisable();
 
 const formActive = () => {
-  mapCanvas.addEventListener('load', () => adForm.classList.remove('ad-form--disabled'));
-
+  mapCanvas.addEventListener('load', () => {
+    adForm.classList.remove('ad-form--disabled');
+    fieldsetInput.forEach((elem) => {
+      elem.removeAttribute('disabled');
+    });
+    fieldsetOption.forEach((elem) => {
+      elem.removeAttribute('disabled');
+    });
+  });
 };
 
 formActive();
