@@ -1,13 +1,13 @@
-import {mapCanvas} from './generator-elements.js';
+
 
 const adForm = document.querySelector('.ad-form');
 const formFilters = document.querySelector('.map__filters');
-//const adFormFieldset = formFilters.querySelectorAll('fieldset');
 const fieldsetInput = formFilters.querySelectorAll('input');
 const fieldsetOption = formFilters.querySelectorAll('option');
 
-const formDisable = () => {
+export const formDisable = () => {
   adForm.classList.add('ad-form--disabled');
+  formFilters.classList.add('ad-form--disabled');
   fieldsetInput.forEach((elem) => {
     elem.setAttribute('disabled', 'disabled');
   });
@@ -19,15 +19,14 @@ const formDisable = () => {
 
 formDisable();
 
-const formActive = () => {
-  mapCanvas.addEventListener('load', () => {
-    adForm.classList.remove('ad-form--disabled');
-    fieldsetInput.forEach((elem) => {
-      elem.removeAttribute('disabled');
-    });
-    fieldsetOption.forEach((elem) => {
-      elem.removeAttribute('disabled');
-    });
+export const formActive = () => {
+  adForm.classList.remove('ad-form--disabled');
+  formFilters.classList.remove('ad-form--disabled');
+  fieldsetInput.forEach((elem) => {
+    elem.removeAttribute('disabled');
+  });
+  fieldsetOption.forEach((elem) => {
+    elem.removeAttribute('disabled');
   });
 };
 
