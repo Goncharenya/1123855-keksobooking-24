@@ -1,20 +1,16 @@
-
-
 const adForm = document.querySelector('.ad-form');
+const adMapFormChildren = adForm.children;
 const formFilters = document.querySelector('.map__filters');
-const fieldsetInput = formFilters.querySelectorAll('input');
-const fieldsetOption = formFilters.querySelectorAll('option');
+const adFiltersFormChildren = formFilters.children;
+const formElements = [...adMapFormChildren, ...adFiltersFormChildren];
 
 export const formDisable = () => {
   adForm.classList.add('ad-form--disabled');
   formFilters.classList.add('ad-form--disabled');
-  fieldsetInput.forEach((elem) => {
-    elem.setAttribute('disabled', 'disabled');
-  });
 
-  fieldsetOption.forEach((elem) => {
+  for (const elem of formElements) {
     elem.setAttribute('disabled', 'disabled');
-  });
+  }
 };
 
 formDisable();
@@ -22,12 +18,10 @@ formDisable();
 export const formActive = () => {
   adForm.classList.remove('ad-form--disabled');
   formFilters.classList.remove('ad-form--disabled');
-  fieldsetInput.forEach((elem) => {
-    elem.removeAttribute('disabled');
-  });
-  fieldsetOption.forEach((elem) => {
-    elem.removeAttribute('disabled');
-  });
+
+  for (const elem of formElements) {
+    elem.removeAttribute('disabled', 'disabled');
+  }
 };
 
 formActive();
