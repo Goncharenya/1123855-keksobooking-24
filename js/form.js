@@ -13,8 +13,6 @@ export const formDisable = () => {
   }
 };
 
-formDisable();
-
 export const formActive = () => {
   adForm.classList.remove('ad-form--disabled');
   formFilters.classList.remove('ad-form--disabled');
@@ -24,4 +22,3 @@ export const formActive = () => {
   }
 };
 
-formActive();

@@ -3,7 +3,7 @@ import {createArray} from './data.js';
 import {FORMATTED_TYPES} from './names.js';
 
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
-export const mapCanvas = document.querySelector('.map__canvas');
+const mapCanvas = document.querySelector('.map__canvas');
 const ads = createArray();
 
 const renderContent = (elem, value) => {
